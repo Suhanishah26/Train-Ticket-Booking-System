@@ -1,0 +1,821 @@
+[
+{
+        "trainId": "ABC10100001",
+        "journeyId": "ABC10100001F",
+        "name": "Rajdhani",
+        "trainStatus": "1",
+        "delayedTime": "00:00:00",
+        "source": "Thane",
+        "destionation": "Bangalore",
+        "departureTime": "2025-06-15T10:00:00.000000000",
+        "stations": {
+            "Kalyan": "2025-06-15T10:30:00.000000000",
+            "Pune": "2025-06-15T13:30:00.000000000",
+            "Solapur": "2025-06-15T17:30:00.000000000",
+            "Dharmavaram": "2025-06-15T23:30:00.000000000",
+            "Bangalore": "2025-06-16T06:00:00.000000000"
+        },
+        "coaches":[
+
+
+{
+    "coachNo":1,
+    "noOfCompartments":4,
+    "listOfCompartment":[
+        {
+            "compartmentId":1,
+            "seats":[
+                [{
+                    "seatNo":101,
+                "isAvailable":true,
+                    "seatType":"LEFT_UPPER",
+                    "section":"MAIN"
+                
+                },
+                {
+                    "seatNo":105,
+                "isAvailable":true,
+                    "seatType":"RIGHT_UPPER",
+                    "section":"MAIN"
+                
+                }],
+
+                [{
+                    "seatNo":102,
+                "isAvailable":true,
+                    "seatType":"LEFT_MIDDLE",
+                    "section":"MAIN"
+                
+                },
+                {
+                    "seatNo":106,
+                "isAvailable":true,
+                    "seatType":"RIGHT_MIDDLE",
+                    "section":"MAIN"
+                
+                }],
+                [{
+                    "seatNo":103,
+                "isAvailable":true,
+                    "seatType":"LEFT_MIDDLE",
+                    "section":"MAIN"
+                
+                },
+                {
+                    "seatNo":107,
+                "isAvailable":true,
+                    "seatType":"RIGHT_MIDDLE",
+                    "section":"MAIN"
+                
+                }],
+                [{
+                    "seatNo":104,
+                "isAvailable":false,
+                    "seatType":"SIDE_UPPER",
+                    "section":"SIDE"
+                
+                },
+                {
+                    "seatNo":108,
+                "isAvailable":false,
+                    "seatType":"SIDE_LOWER",
+                    "section":"SIDE"
+                
+                }]
+
+            ]
+           
+    },
+
+
+
+    {
+        "compartmentId":2,
+        "seats":[
+            [{
+                "seatNo":201,
+            "isAvailable":true,
+                "seatType":"LEFT_UPPER",
+                "section":"MAIN"
+            
+            },
+            {
+                "seatNo":205,
+            "isAvailable":true,
+                "seatType":"RIGHT_UPPER",
+                "section":"MAIN"
+            
+            }],
+
+            [{
+                "seatNo":202,
+            "isAvailable":true,
+                "seatType":"LEFT_MIDDLE",
+                "section":"MAIN"
+            
+            },
+            {
+                "seatNo":206,
+            "isAvailable":true,
+                "seatType":"RIGHT_MIDDLE",
+                "section":"MAIN"
+            
+            }],
+            [{
+                "seatNo":203,
+            "isAvailable":true,
+                "seatType":"LEFT_MIDDLE",
+                "section":"MAIN"
+            
+            },
+            {
+                "seatNo":207,
+            "isAvailable":true,
+                "seatType":"RIGHT_MIDDLE",
+                "section":"MAIN"
+            
+            }],
+            [{
+                "seatNo":204,
+            "isAvailable":false,
+                "seatType":"SIDE_UPPER",
+                "section":"SIDE"
+            
+            },
+            {
+                "seatNo":208,
+            "isAvailable":false,
+                "seatType":"SIDE_LOWER",
+                "section":"SIDE"
+            
+            }]
+
+        ]
+       
+},
+
+
+{
+    "compartmentId":3,
+    "seats":[
+        [{
+            "seatNo":301,
+        "isAvailable":true,
+            "seatType":"LEFT_UPPER",
+            "section":"MAIN"
+        
+        },
+        {
+            "seatNo":205,
+        "isAvailable":true,
+            "seatType":"RIGHT_UPPER",
+            "section":"MAIN"
+        
+        }],
+
+        [{
+            "seatNo":302,
+        "isAvailable":true,
+            "seatType":"LEFT_MIDDLE",
+            "section":"MAIN"
+        
+        },
+        {
+            "seatNo":306,
+        "isAvailable":true,
+            "seatType":"RIGHT_MIDDLE",
+            "section":"MAIN"
+        
+        }],
+        [{
+            "seatNo":303,
+        "isAvailable":true,
+            "seatType":"LEFT_MIDDLE",
+            "section":"MAIN"
+        
+        },
+        {
+            "seatNo":307,
+        "isAvailable":true,
+            "seatType":"RIGHT_MIDDLE",
+            "section":"MAIN"
+        
+        }],
+        [{
+            "seatNo":304,
+        "isAvailable":false,
+            "seatType":"SIDE_UPPER",
+            "section":"SIDE"
+        
+        },
+        {
+            "seatNo":308,
+        "isAvailable":false,
+            "seatType":"SIDE_LOWER",
+            "section":"SIDE"
+        
+        }]
+
+    ]
+   
+},
+{
+    "compartmentId":4,
+    "seats":[
+        [{
+            "seatNo":401,
+        "isAvailable":true,
+            "seatType":"LEFT_UPPER",
+            "section":"MAIN"
+        
+        },
+        {
+            "seatNo":405,
+        "isAvailable":true,
+            "seatType":"RIGHT_UPPER",
+            "section":"MAIN"
+        
+        }],
+
+        [{
+            "seatNo":402,
+        "isAvailable":true,
+            "seatType":"LEFT_MIDDLE",
+            "section":"MAIN"
+        
+        },
+        {
+            "seatNo":406,
+        "isAvailable":true,
+            "seatType":"RIGHT_MIDDLE",
+            "section":"MAIN"
+        
+        }],
+        [{
+            "seatNo":403,
+        "isAvailable":true,
+            "seatType":"LEFT_MIDDLE",
+            "section":"MAIN"
+        
+        },
+        {
+            "seatNo":407,
+        "isAvailable":true,
+            "seatType":"RIGHT_MIDDLE",
+            "section":"MAIN"
+        
+        }],
+        [{
+            "seatNo":404,
+        "isAvailable":false,
+            "seatType":"SIDE_UPPER",
+            "section":"SIDE"
+        
+        },
+        {
+            "seatNo":408,
+        "isAvailable":false,
+            "seatType":"SIDE_LOWER",
+            "section":"SIDE"
+        
+        }]
+
+    ]
+   
+}
+ ]
+},
+
+{
+    "coachNo":2,
+    "noOfCompartments":4,
+    "listOfCompartment":[
+        {
+            "compartmentId":1,
+            "seats":[
+                [{
+                    "seatNo":101,
+                "isAvailable":true,
+                    "seatType":"LEFT_UPPER",
+                    "section":"MAIN"
+                
+                },
+                {
+                    "seatNo":105,
+                "isAvailable":true,
+                    "seatType":"RIGHT_UPPER",
+                    "section":"MAIN"
+                
+                }],
+
+                [{
+                    "seatNo":102,
+                "isAvailable":true,
+                    "seatType":"LEFT_MIDDLE",
+                    "section":"MAIN"
+                
+                },
+                {
+                    "seatNo":106,
+                "isAvailable":true,
+                    "seatType":"RIGHT_MIDDLE",
+                    "section":"MAIN"
+                
+                }],
+                [{
+                    "seatNo":103,
+                "isAvailable":true,
+                    "seatType":"LEFT_MIDDLE",
+                    "section":"MAIN"
+                
+                },
+                {
+                    "seatNo":107,
+                "isAvailable":true,
+                    "seatType":"RIGHT_MIDDLE",
+                    "section":"MAIN"
+                
+                }],
+                [{
+                    "seatNo":104,
+                "isAvailable":false,
+                    "seatType":"SIDE_UPPER",
+                    "section":"SIDE"
+                
+                },
+                {
+                    "seatNo":108,
+                "isAvailable":false,
+                    "seatType":"SIDE_LOWER",
+                    "section":"SIDE"
+                
+                }]
+
+            ]
+           
+    },
+
+
+
+    {
+        "compartmentId":2,
+        "seats":[
+            [{
+                "seatNo":201,
+            "isAvailable":true,
+                "seatType":"LEFT_UPPER",
+                "section":"MAIN"
+            
+            },
+            {
+                "seatNo":205,
+            "isAvailable":true,
+                "seatType":"RIGHT_UPPER",
+                "section":"MAIN"
+            
+            }],
+
+            [{
+                "seatNo":202,
+            "isAvailable":true,
+                "seatType":"LEFT_MIDDLE",
+                "section":"MAIN"
+            
+            },
+            {
+                "seatNo":206,
+            "isAvailable":true,
+                "seatType":"RIGHT_MIDDLE",
+                "section":"MAIN"
+            
+            }],
+            [{
+                "seatNo":203,
+            "isAvailable":true,
+                "seatType":"LEFT_MIDDLE",
+                "section":"MAIN"
+            
+            },
+            {
+                "seatNo":207,
+            "isAvailable":true,
+                "seatType":"RIGHT_MIDDLE",
+                "section":"MAIN"
+            
+            }],
+            [{
+                "seatNo":204,
+            "isAvailable":false,
+                "seatType":"SIDE_UPPER",
+                "section":"SIDE"
+            
+            },
+            {
+                "seatNo":208,
+            "isAvailable":false,
+                "seatType":"SIDE_LOWER",
+                "section":"SIDE"
+            
+            }]
+
+        ]
+       
+},
+
+
+{
+    "compartmentId":3,
+    "seats":[
+        [{
+            "seatNo":301,
+        "isAvailable":true,
+            "seatType":"LEFT_UPPER",
+            "section":"MAIN"
+        
+        },
+        {
+            "seatNo":205,
+        "isAvailable":true,
+            "seatType":"RIGHT_UPPER",
+            "section":"MAIN"
+        
+        }],
+
+        [{
+            "seatNo":302,
+        "isAvailable":true,
+            "seatType":"LEFT_MIDDLE",
+            "section":"MAIN"
+        
+        },
+        {
+            "seatNo":306,
+        "isAvailable":true,
+            "seatType":"RIGHT_MIDDLE",
+            "section":"MAIN"
+        
+        }],
+        [{
+            "seatNo":303,
+        "isAvailable":true,
+            "seatType":"LEFT_MIDDLE",
+            "section":"MAIN"
+        
+        },
+        {
+            "seatNo":307,
+        "isAvailable":true,
+            "seatType":"RIGHT_MIDDLE",
+            "section":"MAIN"
+        
+        }],
+        [{
+            "seatNo":304,
+        "isAvailable":false,
+            "seatType":"SIDE_UPPER",
+            "section":"SIDE"
+        
+        },
+        {
+            "seatNo":308,
+        "isAvailable":false,
+            "seatType":"SIDE_LOWER",
+            "section":"SIDE"
+        
+        }]
+
+    ]
+   
+},
+{
+    "compartmentId":4,
+    "seats":[
+        [{
+            "seatNo":401,
+        "isAvailable":true,
+            "seatType":"LEFT_UPPER",
+            "section":"MAIN"
+        
+        },
+        {
+            "seatNo":405,
+        "isAvailable":true,
+            "seatType":"RIGHT_UPPER",
+            "section":"MAIN"
+        
+        }],
+
+        [{
+            "seatNo":402,
+        "isAvailable":true,
+            "seatType":"LEFT_MIDDLE",
+            "section":"MAIN"
+        
+        },
+        {
+            "seatNo":406,
+        "isAvailable":true,
+            "seatType":"RIGHT_MIDDLE",
+            "section":"MAIN"
+        
+        }],
+        [{
+            "seatNo":403,
+        "isAvailable":true,
+            "seatType":"LEFT_MIDDLE",
+            "section":"MAIN"
+        
+        },
+        {
+            "seatNo":407,
+        "isAvailable":true,
+            "seatType":"RIGHT_MIDDLE",
+            "section":"MAIN"
+        
+        }],
+        [{
+            "seatNo":404,
+        "isAvailable":false,
+            "seatType":"SIDE_UPPER",
+            "section":"SIDE"
+        
+        },
+        {
+            "seatNo":408,
+        "isAvailable":false,
+            "seatType":"SIDE_LOWER",
+            "section":"SIDE"
+        
+        }]
+
+    ]
+   
+}  ]
+},
+{
+    "coachNo":3,
+    "noOfCompartments":4,
+    "listOfCompartment":[
+        {
+            "compartmentId":1,
+            "seats":[
+                [{
+                    "seatNo":101,
+                "isAvailable":true,
+                    "seatType":"LEFT_UPPER",
+                    "section":"MAIN"
+                
+                },
+                {
+                    "seatNo":105,
+                "isAvailable":true,
+                    "seatType":"RIGHT_UPPER",
+                    "section":"MAIN"
+                
+                }],
+
+                [{
+                    "seatNo":102,
+                "isAvailable":true,
+                    "seatType":"LEFT_MIDDLE",
+                    "section":"MAIN"
+                
+                },
+                {
+                    "seatNo":106,
+                "isAvailable":true,
+                    "seatType":"RIGHT_MIDDLE",
+                    "section":"MAIN"
+                
+                }],
+                [{
+                    "seatNo":103,
+                "isAvailable":true,
+                    "seatType":"LEFT_MIDDLE",
+                    "section":"MAIN"
+                
+                },
+                {
+                    "seatNo":107,
+                "isAvailable":true,
+                    "seatType":"RIGHT_MIDDLE",
+                    "section":"MAIN"
+                
+                }],
+                [{
+                    "seatNo":104,
+                "isAvailable":false,
+                    "seatType":"SIDE_UPPER",
+                    "section":"SIDE"
+                
+                },
+                {
+                    "seatNo":108,
+                "isAvailable":false,
+                    "seatType":"SIDE_LOWER",
+                    "section":"SIDE"
+                
+                }]
+
+            ]
+           
+    },
+ {
+        "compartmentId":2,
+        "seats":[
+            [{
+                "seatNo":201,
+            "isAvailable":true,
+                "seatType":"LEFT_UPPER",
+                "section":"MAIN"
+            
+            },
+            {
+                "seatNo":205,
+            "isAvailable":true,
+                "seatType":"RIGHT_UPPER",
+                "section":"MAIN"
+            
+            }],
+
+            [{
+                "seatNo":202,
+            "isAvailable":true,
+                "seatType":"LEFT_MIDDLE",
+                "section":"MAIN"
+            
+            },
+            {
+                "seatNo":206,
+            "isAvailable":true,
+                "seatType":"RIGHT_MIDDLE",
+                "section":"MAIN"
+            
+            }],
+            [{
+                "seatNo":203,
+            "isAvailable":true,
+                "seatType":"LEFT_MIDDLE",
+                "section":"MAIN"
+            
+            },
+            {
+                "seatNo":207,
+            "isAvailable":true,
+                "seatType":"RIGHT_MIDDLE",
+                "section":"MAIN"
+            
+            }],
+            [{
+                "seatNo":204,
+            "isAvailable":false,
+                "seatType":"SIDE_UPPER",
+                "section":"SIDE"
+            
+            },
+            {
+                "seatNo":208,
+            "isAvailable":false,
+                "seatType":"SIDE_LOWER",
+                "section":"SIDE"
+            
+            }]
+
+        ]
+       
+},
+{
+    "compartmentId":3,
+    "seats":[
+        [{
+            "seatNo":301,
+        "isAvailable":true,
+            "seatType":"LEFT_UPPER",
+            "section":"MAIN"
+        
+        },
+        {
+            "seatNo":205,
+        "isAvailable":true,
+            "seatType":"RIGHT_UPPER",
+            "section":"MAIN"
+        
+        }],
+
+        [{
+            "seatNo":302,
+        "isAvailable":true,
+            "seatType":"LEFT_MIDDLE",
+            "section":"MAIN"
+        
+        },
+        {
+            "seatNo":306,
+        "isAvailable":true,
+            "seatType":"RIGHT_MIDDLE",
+            "section":"MAIN"
+        
+        }],
+        [{
+            "seatNo":303,
+        "isAvailable":true,
+            "seatType":"LEFT_MIDDLE",
+            "section":"MAIN"
+        
+        },
+        {
+            "seatNo":307,
+        "isAvailable":true,
+            "seatType":"RIGHT_MIDDLE",
+            "section":"MAIN"
+        
+        }],
+        [{
+            "seatNo":304,
+        "isAvailable":false,
+            "seatType":"SIDE_UPPER",
+            "section":"SIDE"
+        
+        },
+        {
+            "seatNo":308,
+        "isAvailable":false,
+            "seatType":"SIDE_LOWER",
+            "section":"SIDE"
+        
+        }]
+
+    ]
+   
+},
+{
+    "compartmentId":4,
+    "seats":[
+        [{
+            "seatNo":401,
+        "isAvailable":true,
+            "seatType":"LEFT_UPPER",
+            "section":"MAIN"
+        
+        },
+        {
+            "seatNo":405,
+        "isAvailable":true,
+            "seatType":"RIGHT_UPPER",
+            "section":"MAIN"
+        
+        }],
+
+        [{
+            "seatNo":402,
+        "isAvailable":true,
+            "seatType":"LEFT_MIDDLE",
+            "section":"MAIN"
+        
+        },
+        {
+            "seatNo":406,
+        "isAvailable":true,
+            "seatType":"RIGHT_MIDDLE",
+            "section":"MAIN"
+        
+        }],
+        [{
+            "seatNo":403,
+        "isAvailable":true,
+            "seatType":"LEFT_MIDDLE",
+            "section":"MAIN"
+        
+        },
+        {
+            "seatNo":407,
+        "isAvailable":true,
+            "seatType":"RIGHT_MIDDLE",
+            "section":"MAIN"
+        
+        }],
+        [{
+            "seatNo":404,
+        "isAvailable":false,
+            "seatType":"SIDE_UPPER",
+            "section":"SIDE"
+        
+        },
+        {
+            "seatNo":408,
+        "isAvailable":false,
+            "seatType":"SIDE_LOWER",
+            "section":"SIDE"
+        
+        }]
+               ]
+   
+             }
+           ]
+        }   
+     ]
+   }
+   
+    
+
+]

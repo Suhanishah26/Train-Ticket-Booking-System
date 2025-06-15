@@ -1,0 +1,28 @@
+[
+{
+
+   "name":"Suhani Shah",
+   "emailId":"suhani.devendra@gmail.com",
+    "userId":"10000ABC1",
+    "gender":"F",
+     "password":"Suhani@123",
+    "hashedPassword":"a@1234jijfie",
+    "dateOfBirth":"2004-09-26"
+    
+
+},
+{
+
+    "name":"Rahil Khan",
+    "emailId":"rahilkhan05@gmail.com",
+     "userId":"10000ABC2",
+     "gender":"M",
+      "password":"Rahil@123",
+     "hashedPassword":"a@1234ddffie",
+     "dateOfBirth":"2002-05-05"
+
+}
+
+
+
+]
