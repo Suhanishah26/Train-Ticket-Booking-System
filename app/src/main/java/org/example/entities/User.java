@@ -14,4 +14,8 @@ public class User {
     private String hashedPassword;
     private LocalDate dateOfBirth;
     private List<Ticket> bookedTickets = new ArrayList<>();
+
+    public String getUserId() {
+        return this.userId;
+    }
 }
