@@ -48,7 +48,7 @@ public class UserBookingService {
 
     public boolean isLogin(User user) {
         Optional<User> user1 = listOfUsers.stream().filter(
-                (u) -> user.getUserId() == u.getUserId()
+                (u) -> user.getUserId().equals(u.getUserId())
 
         ).findFirst();
 
