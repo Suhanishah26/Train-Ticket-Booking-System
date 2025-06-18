@@ -7,42 +7,32 @@ import java.time.LocalDate;
 import java.time.Month;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
+
+import org.example.utils.UserServiceUtil;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
 public class User {
 
     private String name;
     private String emailId;
+    @JsonIgnore
     private static final String userIdHelper = "10000ABC";
+    @JsonIgnore
     private static int toAddOnSuffix = 3;
     private String userId;
     private char gender;
     private String password;
     private String hashedPassword;
     private LocalDate dateOfBirth;
+    @JsonIgnore
     private List<Ticket> bookedTickets = new ArrayList<>();
-    private static List<Ticket> allTickets = new ArrayList<>();
-
-    private static ObjectMapper mapper = new ObjectMapper();
-
-    static {
-        InputStream in = ClassLoader.getSystemClassLoader()
-                .getResourceAsStream("localdb/tickets.json");
-
-        if (in == null) {
-            throw new RuntimeException("ticket.json file not found.");
-        }
-        try {
-            allTickets = mapper.readValue(in, new TypeReference<List<Ticket>>() {
-            });
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
     public User(String name, String emailId, char gender, String password, int day, int month, int year) {
         setUserId();
@@ -50,8 +40,15 @@ public class User {
         setEmailId(emailId);
         setGender(gender);
         setPassword(password);
+        setHashedPassword(UserServiceUtil.hashPassword(password));
         setDateOfBirth(day, month, year);
 
+    }
+
+    public User(String name, String password) {
+        setName(name);
+        setPassword(password);
+        setHashedPassword(UserServiceUtil.hashPassword(password));
     }
 
     public User() {
@@ -126,6 +123,7 @@ public class User {
         return this.gender;
     }
 
+    @JsonIgnore
     public String getDateOfBirthInFormat() {
         int day = this.dateOfBirth.getDayOfMonth();
         Month month = this.dateOfBirth.getMonth();
@@ -140,14 +138,37 @@ public class User {
     }
 
     // ListOfTickets
+    @JsonIgnore
+    public void setBookedTickets(List<Ticket> bookedTickets) {
+        this.bookedTickets = bookedTickets;
+    }
 
     @JsonIgnore
     public List<Ticket> getBookedTickets() {
-        this.bookedTickets = allTickets.stream()
-                .filter(t -> t.getUserId().equals(this.getUserId()))
-                .collect(Collectors.toList());
+        if (this.bookedTickets.isEmpty()) {
+            this.bookedTickets = Ticket.getAllTickets().stream()
+                    .filter(t -> t.getUserId().equals(this.getUserId()))
+                    .collect(Collectors.toList());
 
-        return bookedTickets;
+        }
+        return this.bookedTickets;
+
+    }
+
+    @JsonIgnore
+    public void printTicketDetails() {
+
+        this.bookedTickets = this.getBookedTickets();
+
+        if (this.bookedTickets.isEmpty()) {
+            System.out.println("No tickets booked yet");
+            return;
+        }
+
+        for (Ticket ticket : this.bookedTickets) {
+            System.out.println("*********************");
+            ticket.getTicketInformation(); // make sure you have a getTicketInformation() in Ticket
+        }
     }
 
 }

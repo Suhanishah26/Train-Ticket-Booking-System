@@ -6,10 +6,12 @@
    "trainId":"ABC10100001",
    "userId":"10000ABC1",
     "source":"Thane",
- "destionation":"Pune",
+ "destination":"Pune",
 "paymentStatus":"Paid",
-    "creationDateTime":"2025-06-14T17:46:50.604289399",
-     "dateOfTravel":"2025-07-14T10:00:00.000000000",
+    "creationDateTime":"2025-06-14T17:46:50",
+     "dateOfTravel":"2025-07-14T10:00:00",
+     "coachNo":1,
+     "compartmentId":1,
      "seatNumber":[108]
 
 }
@@ -21,10 +23,12 @@
       "trainId":"ABC10100001",
       "userId":"10000ABC2",
        "source":"Thane",
-    "destionation":"Banglore",
+    "destination":"Banglore",
    "paymentStatus":"Paid",
-       "creationDateTime":"2025-06-14T10:46:50.604289399",
-        "dateOfTravel":"2025-07-14T10:00:00.000000000",
+       "creationDateTime":"2025-06-14T10:46:50",
+        "dateOfTravel":"2025-07-14T10:00:00",
+        "coachNo":1,
+        "compartmentId":1,
         "seatNumber":[104]
    
    }

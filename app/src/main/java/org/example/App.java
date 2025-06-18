@@ -3,12 +3,290 @@
  */
 package org.example;
 
-public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Enumeration;
+import java.util.List;
+import java.util.Scanner;
 
-    public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+import org.example.entities.Ticket;
+import org.example.entities.Train;
+import org.example.entities.User;
+import org.example.services.TrainService;
+import org.example.services.UserBookingService;
+import org.example.utils.MapperUtil;
+
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+
+import java.net.URL;
+
+public class App {
+
+    public static void main(String[] args) throws IOException {
+
+        System.out.println("*****Train Ticket Booking System*****");
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+        UserBookingService userBookingService = null;
+        TrainService trainService = null;
+        try {
+            userBookingService = new UserBookingService();
+            trainService = new TrainService();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        boolean isLoggedInUser = false;
+        User authenticatedUser = null;
+
+        while (!isLoggedInUser) {
+
+            System.out.println("Choose an option:");
+            System.out.println("1. Signup if you are new here.");
+            System.out.println("2. Login if you already have an account.");
+            System.out.print("Enter your choice: ");
+            int option = Integer.parseInt(reader.readLine().trim());
+
+            boolean isSignedIn = false;
+
+            switch (option) {
+                case 1: {
+                    System.out.println("Enter your details properly for Signing Up.");
+                    System.out.print("Enter your name: ");
+                    String name = reader.readLine().trim();
+
+                    System.out.print("Enter your email Id: ");
+                    String email = reader.readLine().trim();
+
+                    System.out.print("Enter your gender (M or F): ");
+                    char gender = reader.readLine().trim().charAt(0);
+
+                    System.out.print("Enter your day of birth: ");
+                    int day = Integer.parseInt(reader.readLine().trim());
+
+                    System.out.print("Enter your birth month: ");
+                    int month = Integer.parseInt(reader.readLine().trim());
+
+                    System.out.print("Enter your birth year: ");
+                    int year = Integer.parseInt(reader.readLine().trim());
+
+                    System.out.print("Enter password: ");
+                    String password = reader.readLine().trim();
+
+                    User userToSignIn = new User(name, email, gender, password, day, month, year);
+                    isSignedIn = userBookingService.signIn(userToSignIn);
+                    if (isSignedIn) {
+                        System.out.println("Signup successful.");
+                    } else {
+                        System.out.println("Signup failed.");
+                    }
+                    break;
+                }
+                case 2: {
+                    System.out.println("Enter your details to login.");
+                    System.out.print("Enter your name: ");
+                    String name = reader.readLine().trim();
+
+                    System.out.print("Enter password: ");
+                    String password = reader.readLine().trim();
+
+                    User user = new User(name, password);
+                    authenticatedUser = userBookingService.isLoggedIn(user);
+                    if (authenticatedUser != null) {
+                        isLoggedInUser = true;
+                        System.out.println("Login successful.");
+                    } else {
+                        System.out.println("Login failed. Please try again.");
+                    }
+                    break;
+                }
+                default:
+                    System.out.println("Invalid option.");
+            }
+        }
+
+        // Now you can safely show the main menu
+        UserBookingService userService = new UserBookingService(authenticatedUser);
+        System.out.println("Welcome " + authenticatedUser.getName());
+        int choice = 0;
+        while (choice != 5) {
+            System.out.println("**Following are the options you can choose from**");
+            System.out.println("1. Fetch all Booking Details");
+            System.out.println("2.Search for trains");
+            System.out.println("3. Book a ticket");
+            System.out.println("4.Cancel your ticket");
+            System.out.println("5.to end the program");
+            System.out.print("Enter your choice: ");
+
+            choice = Integer.parseInt(reader.readLine().trim());
+
+            List<Train> trains = new ArrayList<>();
+            switch (choice) {
+
+                case 1: {
+                    userService.fetchBookingDetails();
+                    break;
+                }
+
+                case 2: {
+
+                    System.out.println("Thank you for you option");
+                    System.out.print("Enter your source station: ");
+                    String source = reader.readLine().trim();
+
+                    System.out.print("Enter your destionation station: ");
+                    String destination = reader.readLine().trim();
+
+                    System.out.print("Enter your day of travel:");
+                    int day = Integer.parseInt(reader.readLine().trim());
+
+                    System.out.print("Enter your month of travel:");
+                    int month = Integer.parseInt(reader.readLine().trim());
+
+                    System.out.print("Enter your year of travel:");
+                    int year = Integer.parseInt(reader.readLine().trim());
+
+                    LocalDate dateOfTravel = LocalDate.of(year, month, day);
+                    trains = trainService.getTrains(source, destination, dateOfTravel);
+                    for (Train train : trains) {
+                        train.getTrainDetails();
+                    }
+                    if (!trains.isEmpty()) {
+                        System.out.print("Do you wish to see the seats arrangement(0->No or 1->Yes): ");
+                        int seatsViewOrNot = Integer.parseInt(reader.readLine().trim());
+
+                        while (seatsViewOrNot != 0) {
+                            if (seatsViewOrNot == 1) {
+
+                                System.out.print("Enter the train Id of the selected train: ");
+                                String trainId = reader.readLine().trim();
+
+                                Train myTrain = null;
+                                for (Train train : trains) {
+                                    if (train.getTrainId().equals(trainId)) {
+                                        myTrain = train;
+                                        break;
+                                    }
+                                }
+                                trainService.getSeatsOfSelectedTrain(myTrain);
+
+                            }
+
+                            else {
+                                System.out.println("wrong choice");
+                            }
+                            System.out.print("Do you wish to see the seats arrangement(0->No or 1->Yes): ");
+                            seatsViewOrNot = Integer.parseInt(reader.readLine().trim());
+
+                        }
+                    } else {
+                        System.out.println(
+                                "No train found, the database is limited check the trains available in trains.json");
+                    }
+                    break;
+
+                }
+                case 3: {
+
+                    System.out.print("Enter the train Id of the the train you have chosen: ");
+                    String trainId = reader.readLine().trim();
+
+                    Train myTrain = null;
+                    for (Train train : trainService.getAllTrains()) {
+                        if (train.getTrainId().equals(trainId)) {
+                            myTrain = train;
+                            break;
+                        }
+                    }
+                    if (myTrain != null) {
+                        System.out.print("Enter your source: ");
+                        String source = reader.readLine().trim();
+
+                        System.out.print("Enter your destination: ");
+                        String destination = reader.readLine().trim();
+
+                        boolean isValid = myTrain.isValidSourceAndDestination(source, destination);
+                        if (!isValid) {
+                            System.out.println("You have not entered valid source and destionation");
+                            System.out.println("Following is the map of the train you chose");
+                            myTrain.getMap();
+                            break;
+
+                        }
+                        System.out.print("Enter your day of travel:");
+                        int day = Integer.parseInt(reader.readLine().trim());
+
+                        System.out.print("Enter your month of travel:");
+                        int month = Integer.parseInt(reader.readLine().trim());
+
+                        System.out.print("Enter your year of travel:");
+                        int year = Integer.parseInt(reader.readLine().trim());
+
+                        System.out.print("Enter the coachNo:");
+                        int coachNo = Integer.parseInt(reader.readLine().trim());
+
+                        System.out.print("Enter the compartmentId:");
+                        int compartmentId = Integer.parseInt(reader.readLine().trim());
+
+                        System.out.print("Enter seat numbers separated by space (e.g., 12 13 14): ");
+                        String seatInput = reader.readLine().trim();
+
+                        List<Integer> seatNumbers = Arrays
+                                .stream(seatInput.split("\\s+"))
+                                .map(Integer::parseInt)
+                                .toList();
+
+                        Ticket ticket = new Ticket(authenticatedUser, myTrain, source, destination, day, month, year,
+                                coachNo, compartmentId, seatNumbers);
+                        boolean isTicketBooked = userBookingService.bookATicket(ticket);
+                        if (isTicketBooked) {
+                            System.out.println("You have successfully booked a tikcet");
+                            ticket.getTicketInformation();
+                        } else {
+                            System.out.println("Error occured in booking a ticket");
+                        }
+
+                    } else {
+                        System.out.println("Invalid Train Id");
+                        break;
+                    }
+                    break;
+
+                }
+
+                case 4: {
+                    System.out.print("Enter the ticket Id : ");
+                    String ticketId = reader.readLine().trim();
+
+                    boolean isCanceled = userService.cancelBookedTicket(ticketId);
+                    if (isCanceled) {
+                        System.out.println("You have successfully cancelled your ticket");
+                    } else {
+                        System.out.println("Some error occured cancelling your ticket");
+                    }
+
+                    break;
+
+                }
+                case 5: {
+                    break;
+                }
+                default: {
+                    System.out.println("wrong option chosen");
+                    break;
+                }
+
+            }
+
+        }
+
     }
 }
