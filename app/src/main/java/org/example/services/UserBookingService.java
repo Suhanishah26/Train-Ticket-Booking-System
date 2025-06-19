@@ -155,8 +155,8 @@ public class UserBookingService {
         }
 
         // 4️⃣ Now revert seats back to available in trains.json
-        TrainService trainService = new TrainService();
-        List<Train> allTrains = trainService.getAllTrains();
+
+        List<Train> allTrains = TrainService.listOfAllTrains;
 
         for (Train train : allTrains) {
             if (train.getTrainId().equals(ticketToCancel.getTrainId())) {
@@ -178,6 +178,7 @@ public class UserBookingService {
                 }
             }
         }
+        TrainService.listOfAllTrains = allTrains;
         // 5️⃣ Save back the updated trains
         URL pathToTrainsJson = ClassLoader.getSystemClassLoader()
                 .getResource("localdb/trains.json");
@@ -199,6 +200,11 @@ public class UserBookingService {
         List<Ticket> allTickets = new ArrayList<>();
         InputStream in = ClassLoader.getSystemClassLoader()
                 .getResourceAsStream("localdb/tickets.json");
+
+        List<Ticket> temp = user.getBookedTickets();
+
+        temp.add(ticket);
+        user.setBookedTickets(temp);
 
         try {
             allTickets = MapperUtil.getMapper().readValue(in, new TypeReference<List<Ticket>>() {
@@ -222,8 +228,8 @@ public class UserBookingService {
         }
 
         // Now we need to update seats in trains.json
-        TrainService trainService = new TrainService();
-        List<Train> trains = trainService.getAllTrains();
+
+        List<Train> trains = TrainService.listOfAllTrains;
 
         for (Train train : trains) {
             if (train.getTrainId().equals(ticket.getTrainId())) {
@@ -238,7 +244,12 @@ public class UserBookingService {
                                 for (Seat[] row : seats) { // iterate each row
                                     for (Seat seat : row) { // iterate each seat in the row
                                         if (ticket.getSeatNumber().contains(seat.getSeatNo())) {
-                                            seat.setIsAvailable(false);
+                                            if (seat.getIsAvailable()) {
+                                                seat.setIsAvailable(false);
+                                            } else {
+                                                throw new IllegalArgumentException(
+                                                        seat.getSeatNo() + "-> The seat is already booked");
+                                            }
                                         }
                                     }
                                 }
@@ -250,6 +261,7 @@ public class UserBookingService {
             }
         }
 
+        TrainService.listOfAllTrains = trains;
         // Finally, write back to trains.json
         URL trainsURL = ClassLoader.getSystemClassLoader()
                 .getResource("localdb/trains.json");

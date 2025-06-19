@@ -34,15 +34,25 @@ public class User {
     @JsonIgnore
     private List<Ticket> bookedTickets = new ArrayList<>();
 
-    public User(String name, String emailId, char gender, String password, int day, int month, int year) {
+    public User(String name, String emailId, char gender, String password, int day, int month, int year)
+            throws IllegalArgumentException {
         setUserId();
         setName(name);
         setEmailId(emailId);
-        setGender(gender);
+        if (genderCheck(gender)) {
+            setGender(gender);
+        } else {
+            throw new IllegalArgumentException("Did not enter correct gender");
+        }
+
         setPassword(password);
         setHashedPassword(UserServiceUtil.hashPassword(password));
         setDateOfBirth(day, month, year);
 
+    }
+
+    private boolean genderCheck(char gender) {
+        return gender == 'F' || gender == 'f' || gender == 'm' || gender == 'M';
     }
 
     public User(String name, String password) {

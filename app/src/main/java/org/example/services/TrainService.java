@@ -23,7 +23,7 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 
 public class TrainService {
 
-    private List<Train> listOfAllTrains;
+    public static List<Train> listOfAllTrains;
 
     public List<Train> getAllTrains() throws IOException {
 
@@ -68,7 +68,12 @@ public class TrainService {
     }
 
     public void getSeatsOfSelectedTrain(Train train) {
-        train.printSeats();
+        for (Train t : TrainService.listOfAllTrains) {
+            if (t.getTrainId().equals(train.getTrainId())) {
+                t.printSeats();
+            }
+        }
+
     }
 
 }

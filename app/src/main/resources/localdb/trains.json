@@ -138,14 +138,14 @@
             }],
             [{
                 "seatNo":204,
-            "isAvailable":false,
+            "isAvailable":true,
                 "seatType":"SIDE_UPPER",
                 "section":"SIDE"
             
             },
             {
                 "seatNo":208,
-            "isAvailable":false,
+            "isAvailable":true,
                 "seatType":"SIDE_LOWER",
                 "section":"SIDE"
             
@@ -167,7 +167,7 @@
         
         },
         {
-            "seatNo":205,
+            "seatNo":305,
         "isAvailable":true,
             "seatType":"RIGHT_UPPER",
             "section":"MAIN"
@@ -204,14 +204,14 @@
         }],
         [{
             "seatNo":304,
-        "isAvailable":false,
+        "isAvailable":true,
             "seatType":"SIDE_UPPER",
             "section":"SIDE"
         
         },
         {
             "seatNo":308,
-        "isAvailable":false,
+        "isAvailable":true,
             "seatType":"SIDE_LOWER",
             "section":"SIDE"
         
@@ -268,14 +268,14 @@
         }],
         [{
             "seatNo":404,
-        "isAvailable":false,
+        "isAvailable":true,
             "seatType":"SIDE_UPPER",
             "section":"SIDE"
         
         },
         {
             "seatNo":408,
-        "isAvailable":false,
+        "isAvailable":true,
             "seatType":"SIDE_LOWER",
             "section":"SIDE"
         
@@ -339,14 +339,14 @@
                 }],
                 [{
                     "seatNo":104,
-                "isAvailable":false,
+                "isAvailable":true,
                     "seatType":"SIDE_UPPER",
                     "section":"SIDE"
                 
                 },
                 {
                     "seatNo":108,
-                "isAvailable":false,
+                "isAvailable":true,
                     "seatType":"SIDE_LOWER",
                     "section":"SIDE"
                 
@@ -406,14 +406,14 @@
             }],
             [{
                 "seatNo":204,
-            "isAvailable":false,
+            "isAvailable":true,
                 "seatType":"SIDE_UPPER",
                 "section":"SIDE"
             
             },
             {
                 "seatNo":208,
-            "isAvailable":false,
+            "isAvailable":true,
                 "seatType":"SIDE_LOWER",
                 "section":"SIDE"
             
@@ -435,7 +435,7 @@
         
         },
         {
-            "seatNo":205,
+            "seatNo":305,
         "isAvailable":true,
             "seatType":"RIGHT_UPPER",
             "section":"MAIN"
@@ -472,14 +472,14 @@
         }],
         [{
             "seatNo":304,
-        "isAvailable":false,
+        "isAvailable":true,
             "seatType":"SIDE_UPPER",
             "section":"SIDE"
         
         },
         {
             "seatNo":308,
-        "isAvailable":false,
+        "isAvailable":true,
             "seatType":"SIDE_LOWER",
             "section":"SIDE"
         
@@ -536,14 +536,14 @@
         }],
         [{
             "seatNo":404,
-        "isAvailable":false,
+        "isAvailable":true,
             "seatType":"SIDE_UPPER",
             "section":"SIDE"
         
         },
         {
             "seatNo":408,
-        "isAvailable":false,
+        "isAvailable":true,
             "seatType":"SIDE_LOWER",
             "section":"SIDE"
         
@@ -605,14 +605,14 @@
                 }],
                 [{
                     "seatNo":104,
-                "isAvailable":false,
+                "isAvailable":true,
                     "seatType":"SIDE_UPPER",
                     "section":"SIDE"
                 
                 },
                 {
                     "seatNo":108,
-                "isAvailable":false,
+                "isAvailable":true,
                     "seatType":"SIDE_LOWER",
                     "section":"SIDE"
                 
@@ -669,14 +669,14 @@
             }],
             [{
                 "seatNo":204,
-            "isAvailable":false,
+            "isAvailable":true,
                 "seatType":"SIDE_UPPER",
                 "section":"SIDE"
             
             },
             {
                 "seatNo":208,
-            "isAvailable":false,
+            "isAvailable":true,
                 "seatType":"SIDE_LOWER",
                 "section":"SIDE"
             
@@ -696,7 +696,7 @@
         
         },
         {
-            "seatNo":205,
+            "seatNo":305,
         "isAvailable":true,
             "seatType":"RIGHT_UPPER",
             "section":"MAIN"
@@ -733,14 +733,14 @@
         }],
         [{
             "seatNo":304,
-        "isAvailable":false,
+        "isAvailable":true,
             "seatType":"SIDE_UPPER",
             "section":"SIDE"
         
         },
         {
             "seatNo":308,
-        "isAvailable":false,
+        "isAvailable":true,
             "seatType":"SIDE_LOWER",
             "section":"SIDE"
         
@@ -797,14 +797,14 @@
         }],
         [{
             "seatNo":404,
-        "isAvailable":false,
+        "isAvailable":true,
             "seatType":"SIDE_UPPER",
             "section":"SIDE"
         
         },
         {
             "seatNo":408,
-        "isAvailable":false,
+        "isAvailable":true,
             "seatType":"SIDE_LOWER",
             "section":"SIDE"
         

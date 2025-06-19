@@ -69,10 +69,10 @@ public class App {
                     System.out.print("Enter your gender (M or F): ");
                     char gender = reader.readLine().trim().charAt(0);
 
-                    System.out.print("Enter your day of birth: ");
+                    System.out.print("Enter your date of birth(just the date day): ");
                     int day = Integer.parseInt(reader.readLine().trim());
 
-                    System.out.print("Enter your birth month: ");
+                    System.out.print("Enter your birth month(1-12): ");
                     int month = Integer.parseInt(reader.readLine().trim());
 
                     System.out.print("Enter your birth year: ");
@@ -236,7 +236,7 @@ public class App {
                         System.out.print("Enter the compartmentId:");
                         int compartmentId = Integer.parseInt(reader.readLine().trim());
 
-                        System.out.print("Enter seat numbers separated by space (e.g., 12 13 14): ");
+                        System.out.print("Enter seat numbers separated by space (e.g., 201 202 203): ");
                         String seatInput = reader.readLine().trim();
 
                         List<Integer> seatNumbers = Arrays
@@ -246,7 +246,7 @@ public class App {
 
                         Ticket ticket = new Ticket(authenticatedUser, myTrain, source, destination, day, month, year,
                                 coachNo, compartmentId, seatNumbers);
-                        boolean isTicketBooked = userBookingService.bookATicket(ticket);
+                        boolean isTicketBooked = userService.bookATicket(ticket);
                         if (isTicketBooked) {
                             System.out.println("You have successfully booked a tikcet");
                             ticket.getTicketInformation();
